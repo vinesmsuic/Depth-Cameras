@@ -8,11 +8,9 @@ from cv_bridge import CvBridge
 import cv2 #3.2.0
 import imutils
 
-#This one is for KinectV2.
-
 class Kinect_Node(object):
     def __init__(self):
-
+      
         #use CvBridge to convert between ROS and OpenCV images
         self.br = CvBridge()
 
@@ -24,8 +22,6 @@ class Kinect_Node(object):
 
 
     def callback(self, ros_rgb, ros_depth):
-
-        timer = cv2.getTickCount()
         
         #convert ROS image message to OpenCV image 
         depth_frame = self.br.imgmsg_to_cv2(ros_depth, desired_encoding="32FC1")
@@ -34,31 +30,43 @@ class Kinect_Node(object):
         #resize image
         depth_frame = imutils.resize(depth_frame, width=600)
         rgb_frame = imutils.resize(rgb_frame, width=600)
-
-        #get distances
-        f_distance = get_distance(depth_frame)
         
         depth_frame = cv2.cvtColor(depth_frame, cv2.COLOR_GRAY2BGR)
-
-        fps = cv2.getTickFrequency()/(cv2.getTickCount()-timer)
-        #rospy.loginfo("The fps is: %s", fps)
-
+        #rgb_frame = cv2.cvtColor(rgb_frame, cv2.COLOR_BGRA2BGR)
         
+        #get distances
+        f_distance = get_distance(depth_frame)
+        color_mask = showColoredMask(rgb_frame)
+        if color_mask is not None:
+            blob_distance = cv2.bitwise_and(depth_frame, depth_frame, mask=color_mask)
 
+        depth_frame = cv2.cvtColor(depth_frame, cv2.COLOR_GRAY2BGR)
+        
         draw_crosshair(rgb_frame, crosshair_color=(255,0,0))
         draw_crosshair(depth_frame, crosshair_color=(0,0,255))
 
-        
         cv2.putText(rgb_frame, "cm:" + str(f_distance), (15,50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,255), 2, cv2.LINE_AA, False)
 
-        cv2.putText(depth_frame, "fps:" + str(fps), (depth_frame.shape[1]-150,depth_frame.shape[0]-15), cv2.FONT_HERSHEY_SIMPLEX, 1, (255,0,0), 2, cv2.LINE_AA, False)
-
-        #If we want to stablize, don't use imshow. Use a publisher to send the data out and use rqt_gui to see the frame.
+        #If we want to stablize, don't use imshow and waitKey(1). Use a publisher to send the data out and use rqt_gui to see the frame.
         cv2.imshow("depth camera", depth_frame)
         cv2.imshow("rgb camera", rgb_frame)
         
         cv2.waitKey(1)
 
+
+def showColoredMask(frame):
+    
+    #Purple
+    colorLower = np.array([160,135,25])
+    colorUpper = np.array([179,255,255])
+    blurred = cv2.GaussianBlur(frame, (11,11), 0)
+    hsv = cv2.cvtColor(blurred, cv2.COLOR_BGR2HSV)
+    mask = cv2.inRange(hsv, colorLower, colorUpper)
+    mask = cv2.erode(mask, None, iterations=2)
+    mask = cv2.dilate(mask, None, iterations=2)
+    cv2.imshow("masked color", mask)
+
+    return mask
 
 def get_distance(frame):
     img_height = frame.shape[0]
@@ -92,7 +100,7 @@ def main():
     # Tells rospy the name of the node.
     # Anonymous = True makes sure the node has a unique name. Random
     # numbers are added to the end of the name. 
-    rospy.init_node("Kinect_Distance_Node", anonymous=True)
+    rospy.init_node("kinectv2_colortracking", anonymous=True)
 
     ts = message_filters.ApproximateTimeSynchronizer([my_node.rgb_sub, my_node.depth_sub], 10, 0.1)
     ts.registerCallback(my_node.callback)
