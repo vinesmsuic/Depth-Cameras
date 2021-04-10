@@ -1,3 +1,9 @@
+# ROS driver usage
+
+```shell
+roslaunch azure_kinect_ros_driver driver.launch
+```
+
 # Azure Kinect
 
 In terms of hardware, Azure Kinect is actually a “bundle” of 4 devices:
