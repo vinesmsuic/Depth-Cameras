@@ -1,4 +1,4 @@
-# ROS driver usage
+# ROS driver usage - Start the camera node
 
 ```shell
 roslaunch azure_kinect_ros_driver driver.launch
