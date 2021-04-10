@@ -12,7 +12,7 @@ import imutils
 class IntelCamera_Node(object):
     def __init__(self):
 
-        rospy.init_node("kinect_sub_py", anonymous=True)
+        rospy.init_node("intel_camera_bgsubtraction_py", anonymous=True)
 
         #Reserved for 
         self.first_frame = None
