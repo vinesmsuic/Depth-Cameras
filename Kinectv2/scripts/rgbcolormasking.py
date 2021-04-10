@@ -8,6 +8,8 @@ import cv2 #3.2.0
 import imutils
 
 def showColoredMask(frame):
+    
+    #Purple
     colorLower = np.array([160,135,25])
     colorUpper = np.array([179,255,255])
     blurred = cv2.GaussianBlur(frame, (11,11), 0)
