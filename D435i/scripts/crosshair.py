@@ -90,7 +90,7 @@ def draw_crosshair(frame, crosshair_size=30, crosshair_color=(255,0,0), stroke=1
 
 def main():
 
-    my_node = IntelCamera()
+    my_node = IntelCamera_Node()
     # Tells rospy the name of the node.
     # Anonymous = True makes sure the node has a unique name. Random
     # numbers are added to the end of the name. 
