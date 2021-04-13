@@ -27,3 +27,4 @@ Note you need to modify the launch file of original Realsense ROS driver because
  <arg name="enable_infra"        default="true"/>
 ```
 
+[Realsense ros don't run with realsense LiDar L515](https://github.com/IntelRealSense/realsense-ros/issues/1348)
