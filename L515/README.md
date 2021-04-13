@@ -20,11 +20,14 @@ Note you need to modify the launch file of original Realsense ROS driver because
 <!-- enable IMU angluar and accerlate topics -->
  <arg name="unite_imu_method"      default="copy"/>
 <!-- sync IMU and camera-->
- arg name="enable_sync"           default="true"/>   
+ <arg name="enable_sync"           default="true"/>   
 <!-- align depth -->
  <arg name="align_depth"               default="true"/>
 <!-- enable infra-->
  <arg name="enable_infra"        default="true"/>
 ```
+
+
+
 
 [Realsense ros don't run with realsense LiDar L515](https://github.com/IntelRealSense/realsense-ros/issues/1348)

@@ -28,3 +28,4 @@
 sudo chmod +x yourfile.py
 ```
 
+* Use USB 3.0 Port instead of 2.0 .
