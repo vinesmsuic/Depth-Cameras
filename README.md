@@ -18,3 +18,13 @@
 * Kinectv2  x 2     - canceled support by Microsoft
 * [Realsense D435i](https://www.intelrealsense.com/depth-camera-d435i/) x 0
 * [Stereolabs Zed Camera](https://www.stereolabs.com/zed/) x 1
+
+
+## Common Mistakes
+
+* To use the script, you need to set it executable.
+
+```shell
+sudo chmod +x yourfile.py
+```
+
