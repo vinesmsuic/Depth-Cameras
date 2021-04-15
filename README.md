@@ -3,7 +3,7 @@
 
 ## Performance Comparison (Quick view)
 
-* Compatibility Kinectv2 > D435i > Zed > Kinectv4
+* Compatibility: Kinectv2 > D435i > Zed > Kinectv4
 * Depth Accuracy: Kinectv4 > Kinectv2 > D435i > Zed
 * Depth Range:
 * RGB resolution:
