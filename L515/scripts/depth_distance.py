@@ -93,7 +93,7 @@ def main():
     # Tells rospy the name of the node.
     # Anonymous = True makes sure the node has a unique name. Random
     # numbers are added to the end of the name. 
-    rospy.init_node("Kinect_Distance_Node", anonymous=True)
+    rospy.init_node("L515_Distance_Node", anonymous=True)
 
     ts = message_filters.ApproximateTimeSynchronizer([my_node.rgb_sub, my_node.depth_sub], 10, 0.1)
     ts.registerCallback(my_node.callback)
