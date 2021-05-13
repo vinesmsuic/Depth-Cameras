@@ -37,4 +37,4 @@ Note you need to modify the launch file of original Realsense ROS driver because
 
 
 * [Reference: Realsense ros don't run with realsense LiDar L515](https://github.com/IntelRealSense/realsense-ros/issues/1348)
-  * `An error has occurred during frame callback: map::at` 
+  * If you have encountered: `An error has occurred during frame callback: map::at`, just reboot the machine and the error should be gone. 
