@@ -6,6 +6,9 @@ To use the ros driver:
 roslaunch realsense2_camera rs_camera.launch enable_infra:=true
 ```
 
+* As per the L515 datasheet, 640x480 is not a supported RGB resolution.
+* So you would not get Color topics from original Realsense ROS driver.
+
 Note you need to modify the launch file of original Realsense ROS driver because the resolution of RGB is different in L515.
 
 ```xml
