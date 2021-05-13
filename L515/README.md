@@ -22,6 +22,7 @@ Note you need to modify the launch file of original Realsense ROS driver because
   <arg name="enable_accel"        default="true"/>
 <!-- enable IMU angluar and accerlate topics -->
  <arg name="unite_imu_method"      default="copy"/>
+
 <!-- sync IMU and camera-->
  <arg name="enable_sync"           default="true"/>   
 <!-- align depth -->
