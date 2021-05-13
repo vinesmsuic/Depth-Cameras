@@ -33,4 +33,4 @@ Note you need to modify the launch file of original Realsense ROS driver because
 
 
 
-[Realsense ros don't run with realsense LiDar L515](https://github.com/IntelRealSense/realsense-ros/issues/1348)
+* [Reference: Realsense ros don't run with realsense LiDar L515](https://github.com/IntelRealSense/realsense-ros/issues/1348)
