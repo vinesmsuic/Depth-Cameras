@@ -31,7 +31,22 @@ sudo chmod +x yourfile.py
 
 * Use USB 3.0 Port instead of 2.0 .
 
-## Install Intel RealSense SDK and Correct Realsense ROS wrapper (If you are using D435/D455/L515)
+
+# Installations
+
+## Install K4A SDK and K4A ROS wrapper
+
+* For Azure Kinect 
+See [Here the setup guide of K4A (PC only)](https://github.com/PolyU-Robocon/Depth-Cameras/blob/main/Azure-Kinect(Kinectv4)/SETUP.md)
+For Jetson and other ARM architecture, go google yourself
+
+## Install KinectV2 SDK and K2 ROS wrapper
+
+* For Kinect V2
+See [Here the setup guide of K2](https://github.com/PolyU-Robocon/Depth-Cameras/blob/main/Kinectv2/SETUP.md)
+
+
+## Install Intel RealSense SDK and Realsense ROS wrapper
 
 If you are using D435/D455/L515, you need Intel RealSense SDK to make
 
@@ -96,4 +111,15 @@ catkin_make -DCATKIN_ENABLE_TESTING=False -DCMAKE_BUILD_TYPE=Release
 catkin_make install
 ```
 
+### Python Wrapper of Realsense
+
+The pyrealsense2 package is a official wrapper which does support RealSense SDK 2.0.
+
+For PC environment
+```
+pip3 install pyrealsense2
+```
+
+For Jetson and other ARM achitecture, you need to build it from source.
+Refer to [here](https://github.com/IntelRealSense/librealsense/tree/master/wrappers/python#building-from-source)
 
