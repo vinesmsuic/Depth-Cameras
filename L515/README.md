@@ -17,6 +17,8 @@ Note you need to modify the launch file of original Realsense ROS driver because
   <arg name="color_height"        default="720"/>
   <arg name="enable_color"        default="true"/>
 
+<!-- If you need Color-Align-Depth topics:>
+
 <!--enable IMU -->
   <arg name="enable_gyro"         default="true"/>
   <arg name="enable_accel"        default="true"/>
@@ -35,3 +37,4 @@ Note you need to modify the launch file of original Realsense ROS driver because
 
 
 * [Reference: Realsense ros don't run with realsense LiDar L515](https://github.com/IntelRealSense/realsense-ros/issues/1348)
+  * `An error has occurred during frame callback: map::at` 
