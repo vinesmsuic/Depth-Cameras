@@ -8,7 +8,7 @@ from cv_bridge import CvBridge
 import cv2 #3.2.0
 import imutils
 
-class Kinect_Node(object):
+class L515_Node(object):
     def __init__(self):
 
         #use CvBridge to convert between ROS and OpenCV images
@@ -89,7 +89,7 @@ def draw_crosshair(frame, crosshair_size=30, crosshair_color=(255,0,0), stroke=1
 
 def main():
 
-    my_node = Kinect_Node()
+    my_node = L515_Node()
     # Tells rospy the name of the node.
     # Anonymous = True makes sure the node has a unique name. Random
     # numbers are added to the end of the name. 
