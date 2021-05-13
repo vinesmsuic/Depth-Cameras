@@ -83,7 +83,7 @@ cd ~/catkin_ws/src/
 ```
 
 
-Specifically, make sure that the ros package `ddynamic_reconfigure` is installed. If you haven't install it throught APT:
+Specifically, make sure that the ros package `ddynamic_reconfigure` is installed. If you haven't install it through APT:
 
 ```shell
 gitclone https://github.com/pal-robotics/ddynamic_reconfigure.git
