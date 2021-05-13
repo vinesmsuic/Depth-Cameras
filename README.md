@@ -47,6 +47,7 @@ Verify Installation
 ```shell
 realsense-viewer
 ```
+If you are using `./build_realsenseSDK`, it should be LibRealSense v2.41.0.
 
 ### Install Intel RealSense ROS Wrapper
 
@@ -58,6 +59,7 @@ MAKE SURE THE ROS Wrapper Match the version of RealSense SDK.
 otherwise you might encounter this error:
 [RealSense SDK 2.0 is not detected in realsense-ros/realsense2_camera even it is installed](https://github.com/IntelRealSense/realsense-ros/issues/1322)
 
+* You can check the version here. [https://github.com/IntelRealSense/realsense-ros/tags](https://github.com/IntelRealSense/realsense-ros/tags)
 
 Create a catkin workspace if you haven't
 ```
@@ -65,11 +67,14 @@ mkdir -p ~/catkin_ws/src
 cd ~/catkin_ws/src/
 ```
 
+
+
 ```
 git clone https://github.com/IntelRealSense/realsense-ros.git
 cd realsense-ros/
 
-#We use 
+#We use 2.21 for LibRealSense SDK v2.41.0
+git checkout 2.2.21
 
 #Instead of
 #git checkout `git tag | sort -V | grep -P "^2.\d+\.\d+" | tail -1`
@@ -77,4 +82,15 @@ cd realsense-ros/
 
 cd ..
 ```
+
+Specifically, make sure that the ros package `ddynamic_reconfigure` is installed. (Which you should have already)
+
+```
+catkin_init_workspace
+cd ..
+catkin_make clean
+catkin_make -DCATKIN_ENABLE_TESTING=False -DCMAKE_BUILD_TYPE=Release
+catkin_make install
+```
+
 
