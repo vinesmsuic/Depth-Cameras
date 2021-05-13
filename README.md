@@ -77,7 +77,7 @@ otherwise you might encounter this error:
 * You can check the version here. [https://github.com/IntelRealSense/realsense-ros/tags](https://github.com/IntelRealSense/realsense-ros/tags)
 
 Create a catkin workspace if you haven't
-```
+```shell
 mkdir -p ~/catkin_ws/src
 cd ~/catkin_ws/src/
 ```
@@ -85,11 +85,12 @@ cd ~/catkin_ws/src/
 
 Specifically, make sure that the ros package `ddynamic_reconfigure` is installed. If you haven't install it throught APT:
 
-```
+```shell
 gitclone https://github.com/pal-robotics/ddynamic_reconfigure.git
 ```
 
-```
+Get ros package Realsense ROS
+```shell
 git clone https://github.com/IntelRealSense/realsense-ros.git
 cd realsense-ros/
 
@@ -103,13 +104,23 @@ git checkout 2.2.21
 cd ..
 ```
 
-```
+```shell
 catkin_init_workspace
 cd ..
 catkin_make clean
 catkin_make -DCATKIN_ENABLE_TESTING=False -DCMAKE_BUILD_TYPE=Release
 catkin_make install
 ```
+
+If you haven't put it into source
+```shell
+echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
+source ~/.bashrc
+```
+
+
+[More info of RealSense ROS Wrapper](https://github.com/IntelRealSense/realsense-ros)
+
 
 ### Python Wrapper of Realsense
 
@@ -122,4 +133,10 @@ pip3 install pyrealsense2
 
 For Jetson and other ARM achitecture, you need to build it from source.
 Refer to [here](https://github.com/IntelRealSense/librealsense/tree/master/wrappers/python#building-from-source)
+If you have used the shell script for installing RealSenseSDK in this repo, you can skip the building step.
+
+```shell
+echo "export PYTHONPATH=$PYTHONPATH:/usr/local/lib" >> ~/.bashrc
+source ~/.bashrc
+```
 
