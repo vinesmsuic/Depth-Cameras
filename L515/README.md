@@ -17,7 +17,7 @@ Note you need to modify the launch file of original Realsense ROS driver because
   <arg name="color_height"        default="720"/>
   <arg name="enable_color"        default="true"/>
 
-<!-- If you need Color-Align-Depth topics:>
+<!-- If you need Color-Align-Depth topics, change the below -->
 
 <!--enable IMU -->
   <arg name="enable_gyro"         default="true"/>
