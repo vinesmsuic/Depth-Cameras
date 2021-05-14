@@ -131,12 +131,6 @@ For PC environment
 pip3 install pyrealsense2
 ```
 
-For Jetson and other ARM achitecture, you need to build it from source.
-Refer to [here](https://github.com/IntelRealSense/librealsense/tree/master/wrappers/python#building-from-source)
-If you have used the shell script for installing RealSenseSDK in this repo, you can skip the building step.
-
-```shell
-echo "export PYTHONPATH=$PYTHONPATH:/usr/local/lib" >> ~/.bashrc
-source ~/.bashrc
-```
+For Jetson and other ARM achitecture, you need to get the whl file.
+Get it from here: [https://pypi.org/project/pyrealsense2-aarch64/#files](https://pypi.org/project/pyrealsense2-aarch64/#files)
 
