@@ -56,6 +56,9 @@ I forgot how. Google it yourself.
 
 See [https://github.com/PolyU-Robocon/buildOpenCVXavier](https://github.com/PolyU-Robocon/buildOpenCVXavier).
 ```shell
+git clone https://github.com/PolyU-Robocon/buildOpenCVXavier
+cd buildOpenCVXavier
+
 ./buildOpenCV.sh
 ```
 
