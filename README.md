@@ -61,6 +61,9 @@ cd buildOpenCVXavier
 
 ./buildOpenCV.sh
 ```
+## On Nvidia Jetson TX1, TX2
+
+See [https://github.com/jetsonhacks?tab=repositories&q=OpenCV&type=&language=&sort=](https://github.com/jetsonhacks?tab=repositories&q=OpenCV&type=&language=&sort=) and find the corrsponding repo.
 
 ## Install K4A SDK and K4A ROS wrapper
 
