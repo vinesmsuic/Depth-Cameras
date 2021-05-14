@@ -61,6 +61,8 @@ cd buildOpenCVXavier
 
 ./buildOpenCV.sh
 ```
+It should take around 2 hours.
+
 ### On Nvidia Jetson TX1, TX2
 
 See [https://github.com/jetsonhacks?tab=repositories&q=OpenCV&type=&language=&sort=](https://github.com/jetsonhacks?tab=repositories&q=OpenCV&type=&language=&sort=) and find the corrsponding repo.
