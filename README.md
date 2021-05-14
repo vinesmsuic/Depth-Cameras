@@ -35,7 +35,7 @@ sudo chmod +x yourfile.py
 
 # Installations
 
-## Install ROS Melodic If you haven't
+## Install ROS Melodic on Nvidia Jetson If you havent
 
 See [https://github.com/jetsonhacks/installROS](https://github.com/jetsonhacks/installROS).
 
