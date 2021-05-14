@@ -165,6 +165,11 @@ source ~/.bashrc
 
 The pyrealsense2 package is a official wrapper which does support RealSense SDK 2.0.
 
+Get pip3 if you don't have it yet
+```shell
+sudo apt install python3-pip
+```
+
 #### Linux PC environment
 For PC environment
 ```shell
