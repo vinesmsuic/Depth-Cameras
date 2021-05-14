@@ -127,10 +127,13 @@ source ~/.bashrc
 The pyrealsense2 package is a official wrapper which does support RealSense SDK 2.0.
 
 For PC environment
-```
+```shell
 pip3 install pyrealsense2
 ```
 
 For Jetson and other ARM achitecture, you need to get the whl file.
 Get it from here: [https://pypi.org/project/pyrealsense2-aarch64/#files](https://pypi.org/project/pyrealsense2-aarch64/#files)
-
+Then:
+```shell
+pip3 install ~/Downloads/pyrealsense2_aarch64-2.23.0-cp36-none-any.whl 
+```
