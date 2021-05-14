@@ -63,20 +63,25 @@ See [Here the setup guide of K2](https://github.com/PolyU-Robocon/Depth-Cameras/
 
 If you are using D435/D455/L515, you need Intel RealSense SDK.
 
-### Install Intel RealSense SDK (Build From Source)
+### Install Intel RealSense SDK
 
-Here is a script to build realsenseSDK on the Nvidia JetsonNX (Should also work in PC / Laptop environment)
-The script install ROS melodic for you as well.
+* on Linux Computers
+See [https://github.com/IntelRealSense/librealsense/blob/master/doc/distribution_linux.md](https://github.com/IntelRealSense/librealsense/blob/master/doc/distribution_linux.md)
+
+
+
+* on Nvidia Jetson
+Here is a script to build realsenseSDK on the Nvidia JetsonNX.
 
 ```shell
-sudo ./build_realsenseSDK.sh
+sudo ./InstallRealSenseSDK.sh
 ```
 
 Verify Installation
 ```shell
 realsense-viewer
 ```
-If you are using `./build_realsenseSDK`, it should be LibRealSense v2.41.0.
+It should be LibRealSense v2.41.0.
 
 ### Install Intel RealSense ROS Wrapper
 
