@@ -47,6 +47,18 @@ See [https://github.com/jetsonhacks/installROS](https://github.com/jetsonhacks/i
 ./installROS.sh -p ros-melodic-desktop-full -p ros-melodic-rgbd-launch
 ```
 
+## Install OpenCV If your havent
+
+### on Computers
+I forgot how. Google it yourself.
+
+### on Nvidia Jetson NX Xavier
+
+See [https://github.com/PolyU-Robocon/buildOpenCVXavier](https://github.com/PolyU-Robocon/buildOpenCVXavier).
+```shell
+./buildOpenCV.sh
+```
+
 ## Install K4A SDK and K4A ROS wrapper
 
 ### For Azure Kinect 
