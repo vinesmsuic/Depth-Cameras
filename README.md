@@ -49,13 +49,13 @@ See [https://github.com/jetsonhacks/installROS](https://github.com/jetsonhacks/i
 
 ## Install K4A SDK and K4A ROS wrapper
 
-* For Azure Kinect 
+### For Azure Kinect 
 See [Here the setup guide of K4A (PC only)](https://github.com/PolyU-Robocon/Depth-Cameras/blob/main/Azure-Kinect(Kinectv4)/SETUP.md)
 For Jetson and other ARM architecture, go google yourself
 
 ## Install KinectV2 SDK and K2 ROS wrapper
 
-* For Kinect V2
+### For Kinect V2
 See [Here the setup guide of K2](https://github.com/PolyU-Robocon/Depth-Cameras/blob/main/Kinectv2/SETUP.md)
 
 
@@ -65,12 +65,12 @@ If you are using D435/D455/L515, you need Intel RealSense SDK.
 
 ### Install Intel RealSense SDK
 
-* on Linux Computers
+#### on Linux Computers
 See [https://github.com/IntelRealSense/librealsense/blob/master/doc/distribution_linux.md](https://github.com/IntelRealSense/librealsense/blob/master/doc/distribution_linux.md)
 
 
 
-* on Nvidia Jetson
+#### on Nvidia Jetson
 Here is a script to build realsenseSDK on the Nvidia JetsonNX.
 
 ```shell
@@ -145,11 +145,13 @@ source ~/.bashrc
 
 The pyrealsense2 package is a official wrapper which does support RealSense SDK 2.0.
 
+#### Linux PC environment
 For PC environment
 ```shell
 pip3 install pyrealsense2
 ```
 
+#### Jetson and other ARM achitecture
 For Jetson and other ARM achitecture, you need to get the whl file.
 Get it from here: [https://pypi.org/project/pyrealsense2-aarch64/#files](https://pypi.org/project/pyrealsense2-aarch64/#files)
 Then:
