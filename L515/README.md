@@ -10,9 +10,9 @@ roslaunch realsense2_camera rs_camera.launch enable_infra:=true
 * So you would not get Color topics from original Realsense ROS driver.
 
 YOU MUST USE THE FOLLOWING MATCHING PAIRS, according to the datasheet:
-* Color 1920x1080, Depth 1024x768, Operation Range 0.25 - 6m
-* Color 1280x720, Depth 640x480, Operation Range 0.25 - 9m
-* Color 960x540, Depth 320x240, Operation Range 0.25 - 9m
+* Color 1920x1080, Depth 1024x768 (Operation Range 0.25 - 6m)
+* Color 1280x720, Depth 640x480 (Operation Range 0.25 - 9m)
+* Color 960x540, Depth 320x240 (Operation Range 0.25 - 9m)
 
 Note you need to modify the launch file of original Realsense ROS driver because the resolution of RGB is different in L515.
 
