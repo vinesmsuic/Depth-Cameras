@@ -105,7 +105,7 @@ cd ~/catkin_ws/src/
 Specifically, make sure that the ros package `ddynamic_reconfigure` is installed. If you haven't install it through APT:
 
 ```shell
-gitclone https://github.com/pal-robotics/ddynamic_reconfigure.git
+git clone https://github.com/pal-robotics/ddynamic_reconfigure.git
 ```
 
 Get ros package Realsense ROS
