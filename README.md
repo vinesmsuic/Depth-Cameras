@@ -35,8 +35,12 @@ sudo chmod +x yourfile.py
 
 # Installations
 
-## Install ROS Melodic on Nvidia Jetson If you havent
+## Install ROS Melodic If you havent
 
+### on Computers
+See [http://wiki.ros.org/melodic/Installation](http://wiki.ros.org/melodic/Installation).
+
+### on Nvidia Jetson
 See [https://github.com/jetsonhacks/installROS](https://github.com/jetsonhacks/installROS).
 
 ```
@@ -57,11 +61,12 @@ See [Here the setup guide of K2](https://github.com/PolyU-Robocon/Depth-Cameras/
 
 ## Install Intel RealSense SDK and Realsense ROS wrapper
 
-If you are using D435/D455/L515, you need Intel RealSense SDK to make
+If you are using D435/D455/L515, you need Intel RealSense SDK.
 
-### Install Intel RealSense SDK
+### Install Intel RealSense SDK (Build From Source)
 
 Here is a script to build realsenseSDK on the Nvidia JetsonNX (Should also work in PC / Laptop environment)
+The script install ROS melodic for you as well.
 
 ```shell
 sudo ./build_realsenseSDK.sh
