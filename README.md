@@ -17,6 +17,7 @@
 * [AzureKinect (Kinect V4)](https://docs.microsoft.com/en-us/azure/kinect-dk/hardware-specification)  x 2
 * Kinectv2  x 2     - canceled support by Microsoft
 * [Realsense D435i](https://www.intelrealsense.com/depth-camera-d435i/) x 0
+* [Realsense D455](https://www.intelrealsense.com/depth-camera-d455/) x 1
 * [Stereolabs Zed Camera](https://www.stereolabs.com/zed/) x 1
 * Realsense LiDAR Camera L515 x 1
 
@@ -33,6 +34,14 @@ sudo chmod +x yourfile.py
 
 
 # Installations
+
+## Install ROS Melodic If you haven't
+
+See [https://github.com/jetsonhacks/installROS](https://github.com/jetsonhacks/installROS).
+
+```
+./installROS.sh -p ros-melodic-desktop-full -p ros-melodic-rgbd-launch
+```
 
 ## Install K4A SDK and K4A ROS wrapper
 
