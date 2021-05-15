@@ -11,6 +11,8 @@ To use the ros driver:
 ```shell
 roslaunch realsense2_camera rs_camera.launch enable_infra:=true
 ```
+It also tell you the serial number. 
+looking for the serial number in the log printed to screen under "[INFO][...]Device Serial No:".
 
 * As per the L515 datasheet, 640x480 is not a supported RGB resolution.
 * So you would not get Color topics from original Realsense ROS driver.

@@ -47,6 +47,13 @@ See [https://github.com/jetsonhacks/installROS](https://github.com/jetsonhacks/i
 ./installROS.sh -p ros-melodic-desktop-full -p ros-melodic-rgbd-launch
 ```
 
+## Install JetPack (Nvidia Jetson only) If you havent
+
+```
+sudo apt update
+sudo apt install nvidia-jetpack
+```
+
 ## Install OpenCV If your havent
 
 ### on Computers
