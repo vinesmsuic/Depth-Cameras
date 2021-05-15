@@ -1,6 +1,12 @@
 
 L515 is a LiDAR, but it can also act as a Depth and RGB sensor.
 
+To get device serial number
+```shell
+rs-enumerate-devices | grep Serial
+```
+
+
 To use the ros driver:
 ```shell
 roslaunch realsense2_camera rs_camera.launch enable_infra:=true
