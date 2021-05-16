@@ -40,7 +40,7 @@ source ~/.bashrc
 mkdir build
 cd build
 ##defualt should use python 3.6 if installed and configured in update alternatives#
-/usr/bin/cmake ../ -DBUILD_EXAMPLES=true -DCMAKE_BUILD_TYPE=release -DBUILD_PYTHON_BINDINGS=bool:true -DFORCE_RSUSB_BACKEND=false -DBUILD_WITH_CUDA=true && make -j$(($(nproc)-1)) && sudo make install 
+/usr/bin/cmake ../ -DBUILD_EXAMPLES=true -DCMAKE_BUILD_TYPE=release -DBUILD_PYTHON_BINDINGS=bool:true -DFORCE_RSUSB_BACKEND=false -DBUILD_WITH_CUDA=true
 
 sudo make uninstall && sudo make clean && sudo make -j5 && sudo make install
 sudo cp config/99-realsense-libusb.rules /etc/udev/rules.d/
@@ -54,7 +54,7 @@ cd ~/catkin_ws/src/
 git clone https://github.com/IntelRealSense/realsense-ros.git
 cd realsense-ros/
 git checkout 2.3.0
-cd ..
+cd ../../
 sudo apt install ros-melodic-ddynamic-reconfigure
 ##IMPORTANT MANUAL#############
 echo "READ SCRIPT"
@@ -71,3 +71,8 @@ source ~/.bashrc
 
 ##### COPY the .so files to your .py folder if directly importing does not work so that pyrealsense2 can be imported###
 cd /usr/local/lib/python3.6/pyrealsense2/
+
+###roslaunch realsense2_camera rs_camera.launch enable_infra:=true align_depth:=true initial_reset:=true enable_sync:=true
+###need set to compressed##
+###https://github.com/IntelRealSense/realsense-ros/issues/1510#issuecomment-839616982###
+###https://user-images.githubusercontent.com/73002545/117951760-c32a9e00-b314-11eb-878b-121f5e513184.png###
