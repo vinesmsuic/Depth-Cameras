@@ -16,7 +16,7 @@ depthwidth = 1024
 depthheight = 768
 fps = 30
 
-#see d400 datasheep for depth and rgb streaming resolution!!
+#see L515 datasheet for depth and rgb streaming resolution!!
 config.enable_stream(rs.stream.depth, depthwidth, depthheight, rs.format.z16, fps)  # depth
 
 config.enable_stream(rs.stream.color, colorwidth, colorheight, rs.format.bgr8, fps) # rgb

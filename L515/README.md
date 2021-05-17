@@ -46,8 +46,13 @@ Note you need to modify the launch file of original Realsense ROS driver because
  <arg name="enable_infra"        default="true"/>
 ```
 
+* SOURCE YOUR FILE AFTER MODIFYING THE LAUNCH FILE, or simply rebuild by `catkin_make`, otherwise there could be error
+
+```
+./devel/setup.bash
+```
 
 
 
 * [Reference: Realsense ros don't run with realsense LiDar L515](https://github.com/IntelRealSense/realsense-ros/issues/1348)
-  * If you have encountered: `An error has occurred during frame callback: map::at`, just reboot the machine and the error should be gone. 
+
