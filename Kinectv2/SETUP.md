@@ -110,7 +110,8 @@ HD Topics
 The images in this topics have a FullHD resolution (1920x1080).
 
 Note: For correct registration of the depth image to the color image it is needed to perform a calibration.
-HD (RGB + Depth): `/kinect2/hd/image_color` + `/kinect2/hd/image_depth_rect`
+<br>
+For HD (RGB + Depth): `/kinect2/hd/image_color` + `/kinect2/hd/image_depth_rect`
 
 
 ```shell
