@@ -82,9 +82,10 @@ cd ~/catkin_ws
 catkin_make -DCMAKE_BUILD_TYPE="Release"
 ```
 
+> 
 > Troubleshooting
 > 
-> For any problem related to `opencv` not found
+> For any problem related to `opencv` not found, create a symbolic link between the 2 opencv folders.
 > ```
 > sudo ln -s /usr/include/opencv4/opencv2/ /usr/include/opencv
 > ```
@@ -93,7 +94,7 @@ catkin_make -DCMAKE_BUILD_TYPE="Release"
 > ```
 > sudo apt install libopencv3.2
 > ```
-
+> 
 
 ```shell
 source ~/catkin_ws/devel/setup.bash
