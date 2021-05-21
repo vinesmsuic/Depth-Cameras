@@ -82,6 +82,19 @@ cd ~/catkin_ws
 catkin_make -DCMAKE_BUILD_TYPE="Release"
 ```
 
+> Troubleshooting
+> 
+> For any problem related to `opencv` not found
+> ```
+> sudo ln -s /usr/include/opencv4/opencv2/ /usr/include/opencv
+> ```
+> 
+> For any problem related to `recipe for target 'iai_kinect2/kinect2_bridge/CMakeFiles/kinect2_bridge_nodelet.dir/all' failed, needed by xxxxx. Stop.`
+> ```
+> sudo apt install libopencv3.2
+> ```
+
+
 ```shell
 source ~/catkin_ws/devel/setup.bash
 ```
