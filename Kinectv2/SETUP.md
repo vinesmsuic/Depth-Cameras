@@ -62,7 +62,7 @@ cd ~/catkin_ws/src/
 **Note: If you are using OpenCV version => 4, install the special version of iai_kinect2.**
 > If you are using Jetson Xavier NX, you are probably using OpenCV version => 4.
 ```shell
-git clone https://github.com/PolyU-Robocon/iai_kinect2_opencv4.git
+git clone https://github.com/paul-shuvo/iai_kinect2_opencv4.git
 cd iai_kinect2_opencv4
 rosdep install -r --from-paths .
 ```
