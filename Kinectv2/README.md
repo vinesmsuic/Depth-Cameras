@@ -4,5 +4,5 @@
 roslaunch kinect2_bridge kinect2_bridge.launch
 ```
 
-![https://www.youtube.com/embed/uq9SEJxZiUg](https://www.youtube.com/embed/uq9SEJxZiUg)
+[![Watch the video](https://img.youtube.com/vi/uq9SEJxZiUg/maxresdefault.jpg)](https://youtu.be/uq9SEJxZiUg)
 
