@@ -10,5 +10,5 @@
 
 You can create a catkin package in `<your workspace>/src`
 ```shell
-catkin_create_pkg opencv_task_handler image_transport cv_bridge sensor_msgs rospy roscpp std_msgs
+catkin_create_pkg opencv_task_handler image_transport cv_bridge sensor_msgs rospy roscpp std_msgs message_filters
 ```
