@@ -195,6 +195,7 @@ Firstly, configure Microsoft's Package Repository
 curl -sSL https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
 ```
 
+If you are using ARM, replace `https://packages.microsoft.com/ubuntu/18.04/prod` with `https://packages.microsoft.com/ubuntu/18.04/multiarch/prod`.
 ```shell
 sudo apt-add-repository https://packages.microsoft.com/ubuntu/18.04/prod
 ```
