@@ -1,7 +1,8 @@
+##For jetson nx only##
 echo "run manually"
 exit
 sudo apt update
-##May have manual pop up##
+##Confirmation prompts may pop up##
 sudo apt install nvidia-jetpack
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
 sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
@@ -19,35 +20,48 @@ sudo apt update
 sudo apt upgrade -y
 sudo apt install -y libssl-dev libusb-1.0-0-dev pkg-config build-essential cmake cmake-curses-gui libgtk-3-dev libglfw3-dev libgl1-mesa-dev libglu1-mesa-dev qtcreator python3 python3-dev apt-utils librealsense2-utils librealsense2-dev
 
+## The following needs to be copied and pasted, do not run each line seperatly#
 echo 'export PATH="/usr/local/cuda-10.2/bin:$PATH"
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda-10.2/lib64"
 export PYTHONPATH="$PYTHONPATH:/usr/local/lib"' >> ~/.profile
 source ~/.bashrc
+#end#
+## The above needs to be changed according to cuda version and path##
+
 
 cd ~
 git clone https://github.com/IntelRealSense/librealsense.git
 cd librealsense/
 git checkout v2.45.0
-##kernel patch https://github.com/IntelRealSense/librealsense/blob/v2.45.0/doc/installation_jetson.md##
+##kernel patch, see https://github.com/IntelRealSense/librealsense/blob/v2.45.0/doc/installation_jetson.md##
 ./scripts/patch-realsense-ubuntu-L4T.sh  
 
-##reboot##
+##reboot the jetson nx##
 sudo apt-get install git libssl-dev libusb-1.0-0-dev pkg-config libgtk-3-dev -y
 ./scripts/setup_udev_rules.sh  
-export 'PYTHONPATH="$PYTHONPATH:/usr/local/lib/python3.6/pyrealsense2/"' >> ~/.profile
-source ~/.bashrc
 
 mkdir build
 cd build
-##defualt should use python 3.6 if installed and configured in update alternatives#
+##the default should be python 3.6 if it is installed and configured in update-alternatives#
+# or else 
+# If you have multiple python installations on your machine you can use: -DPYTHON_EXECUTABLE=<path to python executable>
+#Instead of cmake, you can use cmake-gui for gui assisted configurations
 /usr/bin/cmake ../ -DBUILD_EXAMPLES=true -DCMAKE_BUILD_TYPE=release -DBUILD_PYTHON_BINDINGS=bool:true -DFORCE_RSUSB_BACKEND=false -DBUILD_WITH_CUDA=true
 
-sudo make uninstall && sudo make clean && sudo make -j5 && sudo make install
+###Not used###
+#sudo uninstall
+#sudo make clean
+###end#######
+
+sudo make -j5 && sudo make install
 sudo cp config/99-realsense-libusb.rules /etc/udev/rules.d/
 
+##add the pyrealsense lib path, change accordingly to python version##
+export 'PYTHONPATH="$PYTHONPATH:/usr/local/lib/python3.6/pyrealsense2/"' >> ~/.profile
+source ~/.bashrc
 
 
-# reboot
+##reboot the jetson nx#
 mkdir -p ~/catkin_ws/src
 cd ~/catkin_ws/src/
 
@@ -56,23 +70,28 @@ cd realsense-ros/
 git checkout 2.3.0
 cd ../../
 sudo apt install ros-melodic-ddynamic-reconfigure
-##IMPORTANT MANUAL#############
-echo "READ SCRIPT"
-nano /opt/ros/melodic/share/cv_bridge/cmake/cv_bridgeConfig.cmake
-##replace all instances /usr/include/opencv with /usr/include/opencv4
-## Nvidia precompiled opencv4##
 
-catkin_make clean
+##IMPORTANT##
+echo "READ SCRIPT"
+##Edit /opt/ros/melodic/share/cv_bridge/cmake/cv_bridgeConfig.cmake in a text editor##
+nano /opt/ros/melodic/share/cv_bridge/cmake/cv_bridgeConfig.cmake
+##Replace all instances /usr/include/opencv with /usr/include/opencv4
+##This makes it so that it uses the jetson nx's (jetpack) precompiled opencv4##
+
+###Not used###
+#catkin_make clean
+###end#######
+
 catkin_make -DCATKIN_ENABLE_TESTING=False -DCMAKE_BUILD_TYPE=Release
 catkin_make install
 
 echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 
-##### COPY the .so files to your .py folder if directly importing does not work so that pyrealsense2 can be imported###
+##### COPY the .so files to your .py folder if directly importing pyrealsense2 does not work###
 cd /usr/local/lib/python3.6/pyrealsense2/
 
 ###roslaunch realsense2_camera rs_camera.launch enable_infra:=true align_depth:=true initial_reset:=true enable_sync:=true
-###need set to compressed##
+###need to set to compressed due to bandwidth limitations##
 ###https://github.com/IntelRealSense/realsense-ros/issues/1510#issuecomment-839616982###
 ###https://user-images.githubusercontent.com/73002545/117951760-c32a9e00-b314-11eb-878b-121f5e513184.png###
