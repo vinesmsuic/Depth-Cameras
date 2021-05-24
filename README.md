@@ -35,13 +35,13 @@
 * **Depth FOV (H × V):** 70° × 55°
 * **Depth Resolution:** Up to 1024 × 768
 * **Depth Accuracy Error:** ~5 mm to ~14 mm thru 9m^2
-* **Depth Frame Rate: ** 30 fps
+* **Depth Frame Rate:** 30 fps
 * **Minimum Depth Distance (Min-Z) at Max Resolution:** ~25 cm
-* **Ideal Range: ** .25 m to 9 m^3 (Range affected by reflectivity)
-* **RGB Frame Rate and Resolution: ** 1920 × 1080 at 30 fps
-* **RGB Sensor FOV (H × V): ** 70° × 43°
+* **Ideal Range:** .25 m to 9 m^3 (Range affected by reflectivity)
+* **RGB Frame Rate and Resolution:** 1920 × 1080 at 30 fps
+* **RGB Sensor FOV (H × V):** 70° × 43°
 * **IMU:** Yes
-* **Use Environment: ** Indoor only, won't work in HKSTP because L515 uses same wavelength with their LEDs. 
+* **Use Environment:** Indoor only, won't work in HKSTP because L515 uses same wavelength with their LEDs. 
 
 
 
@@ -79,13 +79,13 @@
 * **Depth FOV (H × V):** 87° × 58°
 * **Depth Resolution:** Up to 1280 × 720
 * **Depth Accuracy Error:** <2% at 4 m^2
-* **Depth Frame Rate: ** Up to 90 fps
+* **Depth Frame Rate:** Up to 90 fps
 * **Minimum Depth Distance (Min-Z) at Max Resolution:** ~52 cm
-* **Ideal Range: ** 0.6 m to 6 m (0.6m to 4m if accuracy concerned)
-* **RGB Frame Rate and Resolution: ** 1280 × 800 at 30 fps
-* **RGB Sensor FOV (H × V): ** 90° × 65°
+* **Ideal Range:** 0.6 m to 6 m (0.6m to 4m if accuracy concerned)
+* **RGB Frame Rate and Resolution:** 1280 × 800 at 30 fps
+* **RGB Sensor FOV (H × V):** 90° × 65°
 * **IMU:** Yes
-* **Use Environment: ** Indoor/Outdoor, work in HKSTP
+* **Use Environment:** Indoor/Outdoor, work in HKSTP
 
 
 
@@ -102,13 +102,13 @@
 * **Depth FOV (H × V):** 70° × 60°
 * **Depth Resolution:** 512 x 424
 * **Depth Accuracy Error:** -
-* **Depth Frame Rate: ** 30 fps
+* **Depth Frame Rate:** 30 fps
 * **Minimum Depth Distance (Min-Z) at Max Resolution:** >1m
-* **Ideal Range: ** 1 to > 4.5m
-* **RGB Frame Rate and Resolution: ** 1920 x 1080 at 30 fps
-* **RGB Sensor FOV (H × V): ** 70° × 60°
+* **Ideal Range:** 1 to > 4.5m
+* **RGB Frame Rate and Resolution:** 1920 x 1080 at 30 fps
+* **RGB Sensor FOV (H × V):** 70° × 60°
 * **IMU:** No
-* **Use Environment: ** Indoor/Outdoor, work in HKSTP
+* **Use Environment:** Indoor/Outdoor, work in HKSTP
 
 
 
@@ -138,15 +138,15 @@
 * **Full Name:** Microsoft Azure Kinect
 * **Depth Technology:** Time of Flight (TOF)
 * **Depth FOV (H × V):** up to 120° × 120°
-* **Depth Resolution: ** up to 1024 × 1024
+* **Depth Resolution:** up to 1024 × 1024
 * **Depth Accuracy Error:** -
-* **Depth Frame Rate: **  up to 30 fps, 15 fps if WFOV unbinned
+* **Depth Frame Rate:**  up to 30 fps, 15 fps if WFOV unbinned
 * **Minimum Depth Distance (Min-Z) at Max Resolution:** 0.5m
-* **Ideal Range: **  0.5 - 4m
-* **RGB Frame Rate and Resolution: **up to 3840 × 2160
-* **RGB Sensor FOV (H × V): **  up to 90° × 59°
+* **Ideal Range:**  0.5 - 4m
+* **RGB Frame Rate and Resolution:**up to 3840 × 2160
+* **RGB Sensor FOV (H × V):**  up to 90° × 59°
 * **IMU:** Yes
-* **Use Environment: ** Indoor/Outdoor, work in HKSTP
+* **Use Environment:** Indoor/Outdoor, work in HKSTP
 
 
 
@@ -183,13 +183,13 @@
 * **Depth FOV (H × V):** 
 * **Depth Resolution:** 
 * **Depth Accuracy Error:** -
-* **Depth Frame Rate: ** 
+* **Depth Frame Rate:** 
 * **Minimum Depth Distance (Min-Z) at Max Resolution:** 
-* **Ideal Range: ** 
-* **RGB Frame Rate and Resolution: ** 
-* **RGB Sensor FOV (H × V): ** 
+* **Ideal Range:** 
+* **RGB Frame Rate and Resolution:** 
+* **RGB Sensor FOV (H × V):** 
 * **IMU:** 
-* **Use Environment: ** 
+* **Use Environment:** 
 
 
 
