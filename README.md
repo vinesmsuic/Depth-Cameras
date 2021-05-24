@@ -3,12 +3,11 @@
 
 ## Performance Comparison (Quick view)
 
-* Compatibility: Kinectv2 > D435i > Zed > Kinectv4
-* Depth Accuracy: Kinectv4 > Kinectv2 > D435i > Zed
-* Depth Range:
-* RGB resolution:
-* FPS:
-* Price: 
+* Depth Accuracy: L515 > Kinectv4 > Kinectv2 > D435i > Zed
+* Depth Range: Zed > L515 > D455 > KinectV2 > Kinectv4
+* RGB resolution: Kinectv4 > All
+* FPS: D455 > All
+* Price: Max has no clue, Max didn't pay the check
 
 
 
@@ -22,171 +21,177 @@
 * Realsense LiDAR Camera L515 x 1
 
 
-## Common Mistakes
 
-* To use the script, you need to set it executable.
+## Performance of Each Cameras
 
-```shell
-sudo chmod +x yourfile.py
-```
-
-* Use USB 3.0 Port instead of 2.0 .
-
-
-# Installations
-
-## Install ROS Melodic If you havent
-
-### on Computers
-See [http://wiki.ros.org/melodic/Installation](http://wiki.ros.org/melodic/Installation).
-
-### on Nvidia Jetson
-See [https://github.com/jetsonhacks/installROS](https://github.com/jetsonhacks/installROS).
-
-```
-./installROS.sh -p ros-melodic-desktop-full -p ros-melodic-rgbd-launch
-```
-
-## Install JetPack (Nvidia Jetson only) If you havent
-
-```
-sudo apt update
-sudo apt install nvidia-jetpack
-```
-
-## Install OpenCV If your havent
-
-### on Computers
-I forgot how. Google it yourself.
-
-### on Nvidia Jetson NX Xavier
-
-See [https://github.com/PolyU-Robocon/buildOpenCVXavier](https://github.com/PolyU-Robocon/buildOpenCVXavier).
-```shell
-git clone https://github.com/jetsonhacks/buildOpenCVXavier
-cd buildOpenCVXavier
-
-./buildOpenCV.sh
-```
-It should take around 2 hours.
-
-### On Nvidia Jetson TX1, TX2
-
-See [https://github.com/jetsonhacks?tab=repositories&q=OpenCV&type=&language=&sort=](https://github.com/jetsonhacks?tab=repositories&q=OpenCV&type=&language=&sort=) and find the corrsponding repo.
-
-## Install K4A SDK and K4A ROS wrapper
-
-### For Azure Kinect 
-See [Here the setup guide of K4A (PC only)](https://github.com/PolyU-Robocon/Depth-Cameras/blob/main/Azure-Kinect(Kinectv4)/SETUP.md)
-For Jetson and other ARM architecture, go google yourself
-
-## Install KinectV2 SDK and K2 ROS wrapper
-
-### For Kinect V2
-See [Here the setup guide of K2](https://github.com/PolyU-Robocon/Depth-Cameras/blob/main/Kinectv2/SETUP.md)
-
-
-## Install Intel RealSense SDK and Realsense ROS wrapper
-
-If you are using D435/D455/L515, you need Intel RealSense SDK.
-
-### Install Intel RealSense SDK
-
-#### on Linux Computers
-See [https://github.com/IntelRealSense/librealsense/blob/master/doc/distribution_linux.md](https://github.com/IntelRealSense/librealsense/blob/master/doc/distribution_linux.md)
+> Reference: [Compare Intel cameras](https://www.intelrealsense.com/compare-depth-cameras/)
 
 
 
-#### on Nvidia Jetson
-Here is a script to build realsenseSDK on the Nvidia JetsonNX.
+### L515
 
-```shell
-sudo ./InstallRealSenseSDK.sh
-```
-
-Verify Installation
-```shell
-realsense-viewer
-```
-It should be LibRealSense v2.41.0.
-
-### Install Intel RealSense ROS Wrapper
-
-You need:
-* ROS
-* RealSense SDK
-
-MAKE SURE THE ROS Wrapper Match the version of RealSense SDK.
-otherwise you might encounter this error:
-[RealSense SDK 2.0 is not detected in realsense-ros/realsense2_camera even it is installed](https://github.com/IntelRealSense/realsense-ros/issues/1322)
-
-* You can check the version here. [https://github.com/IntelRealSense/realsense-ros/tags](https://github.com/IntelRealSense/realsense-ros/tags)
-
-Create a catkin workspace if you haven't
-```shell
-mkdir -p ~/catkin_ws/src
-cd ~/catkin_ws/src/
-```
+* **Full Name:** Intel® RealSense™ LiDAR Camera L515
+* **Depth Technology:** LiDAR
+* **Depth FOV (H × V):** 70° × 55°
+* **Depth Resolution:** Up to 1024 × 768
+* **Depth Accuracy Error:** ~5 mm to ~14 mm thru 9m^2
+* **Depth Frame Rate: ** 30 fps
+* **Minimum Depth Distance (Min-Z) at Max Resolution:** ~25 cm
+* **Ideal Range: ** .25 m to 9 m^3 (Range affected by reflectivity)
+* **RGB Frame Rate and Resolution: ** 1920 × 1080 at 30 fps
+* **RGB Sensor FOV (H × V): ** 70° × 43°
+* **IMU:** Yes
+* **Use Environment: ** Indoor only, won't work in HKSTP because L515 uses same wavelength with their LEDs. 
 
 
-Specifically, make sure that the ros package `ddynamic_reconfigure` is installed. If you haven't install it through APT:
 
-```shell
-git clone https://github.com/pal-robotics/ddynamic_reconfigure.git
-```
-
-Get ros package Realsense ROS
-```shell
-git clone https://github.com/IntelRealSense/realsense-ros.git
-cd realsense-ros/
-
-#We use 2.21 for LibRealSense SDK v2.41.0
-git checkout 2.2.21
-
-#Instead of
-#git checkout `git tag | sort -V | grep -P "^2.\d+\.\d+" | tail -1`
-
-
-cd ..
-```
-
-```shell
-catkin_init_workspace
-cd ..
-catkin_make clean
-catkin_make -DCATKIN_ENABLE_TESTING=False -DCMAKE_BUILD_TYPE=Release
-catkin_make install
-```
-
-If you haven't put it into source
-```shell
-echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
-source ~/.bashrc
-```
+> #### Limitations of L515
+>
+> [Reference](https://www.intelrealsense.com/optimizing-the-lidar-camera-l515-range/)
+>
+> L515 depends on signal to noise ratio (SNR), or in other words, the “quality” of the returned signal. Situations that reduce signal quality include ambient light, poor reflective surfaces, laser power, and receiver gain. A change in SNR will have an effect on the final depth result. This section will discuss each of these while giving suggestions on how to optimize for best results.
+>
+>
+> **Ambient Light**
+>
+> L515 operates at a wavelength of 860nm which is invisible to the human eye and is not affected by common lighting technologies. However, this wavelength is found in sunlight and, therefore, sunlight does have a negative effect on depth quality. When sunlight is present, the camera receiver has difficulty distinguishing between its transmitted laser light code and that of the sunlight. This creates noise leading to low confidence depth or no depth. Because of this, the L515 should only be operated indoors and away from sunlight. Not only direct sunlight, but also sunlight through windows can affect the camera so it is advised not to use the camera near brightly lit windows. Although sunlight is the most common light source containing near IR at 860nm, other light sources that include IR and can reduce L515 performance include halogen and some LED.
+>
+> HKSTP uses a lot of LED lights, thus L515 only has 2m of range there.
+>
+> The camera is capable of filtering some ambient sunlight. This can be easily enabled by selecting the “Low Ambient Light” preset in the RealSense SDK or Depth Viewer. The images below show a scene of a table and chairs near a window in an office environment. The quality of the depth in the left image is poor due to the sunlight interfering with the camera. The Low Ambient Light setting is used in the image on the right resulting in a dramatic improvement of depth quality.
+>
+>
+> **Non-optimal Surfaces**
+>
+> L515 works best on objects that have a reflective and matte surface resulting in a diffuse reflection. If a surface is too smooth and reflective (mirror finish) light hitting the surface at an angle will not reflect back to the camera as illustrated below. Comparatively rough surfaces allow some of the light to be reflected back to the camera and used to calculate distance.
+>
+> ![](https://www.intelrealsense.com/wp-content/uploads/2020/07/reflections.png)
+>
+>
+> Some material does not reflect much light at all which results in no depth data. An example of such material is darkly colored carpeting and some black plastics. This does not mean that dark carpet cannot be detected by the camera. It does mean that while a wooden floor may produce an excellent depth map at 5 meters distance, the dark carpet may not produce a good depth map until the distance from the camera reduces to 3 or 4 meters.
 
 
-[More info of RealSense ROS Wrapper](https://github.com/IntelRealSense/realsense-ros)
+
+### D455
+
+* **Full Name:** Intel® RealSense™ Depth Camera D455
+* **Depth Technology:** Active IR Stereo
+* **Depth FOV (H × V):** 87° × 58°
+* **Depth Resolution:** Up to 1280 × 720
+* **Depth Accuracy Error:** <2% at 4 m^2
+* **Depth Frame Rate: ** Up to 90 fps
+* **Minimum Depth Distance (Min-Z) at Max Resolution:** ~52 cm
+* **Ideal Range: ** 0.6 m to 6 m (0.6m to 4m if accuracy concerned)
+* **RGB Frame Rate and Resolution: ** 1280 × 800 at 30 fps
+* **RGB Sensor FOV (H × V): ** 90° × 65°
+* **IMU:** Yes
+* **Use Environment: ** Indoor/Outdoor, work in HKSTP
 
 
-### Python Wrapper of Realsense
 
-The pyrealsense2 package is a official wrapper which does support RealSense SDK 2.0.
+> #### Limitations of D455
+>
+> 
 
-Get pip3 if you don't have it yet
-```shell
-sudo apt install python3-pip
-```
 
-#### Linux PC environment
-For PC environment
-```shell
-pip3 install pyrealsense2
-```
 
-#### Jetson and other ARM achitecture
-For Jetson and other ARM achitecture, you need to get the whl file.
-Get it from here: [https://pypi.org/project/pyrealsense2-aarch64/#files](https://pypi.org/project/pyrealsense2-aarch64/#files)
-Then:
-```shell
-pip3 install ~/Downloads/pyrealsense2_aarch64-2.23.0-cp36-none-any.whl 
-```
+### Kinect V2
+
+* **Full Name:** Microsoft Kinect v2 3D-Camera
+* **Depth Technology:** Time of Flight (TOF)
+* **Depth FOV (H × V):** 70° × 60°
+* **Depth Resolution:** 512 x 424
+* **Depth Accuracy Error:** -
+* **Depth Frame Rate: ** 30 fps
+* **Minimum Depth Distance (Min-Z) at Max Resolution:** >1m
+* **Ideal Range: ** 1 to > 4.5m
+* **RGB Frame Rate and Resolution: ** 1920 x 1080 at 30 fps
+* **RGB Sensor FOV (H × V): ** 70° × 60°
+* **IMU:** No
+* **Use Environment: ** Indoor/Outdoor, work in HKSTP
+
+
+
+> #### Limitations of ToF (Time of Flight) Camera
+>
+> [Reference](https://www.seeedstudio.com/blog/2020/01/08/what-is-a-time-of-flight-sensor-and-how-does-a-tof-sensor-work/#:~:text=For%20most%20of%20the%20ToF,coherent%20under%20the%20ToF%20sensor.)
+>
+> **Scattered Light**
+>
+> In the event where very bright surfaces are located very near your ToF sensor, they can scatter too much light into your receiver and create artefacts and unwanted reflections as your ToF sensor only requires light that has been reflected just once for measurement.
+>
+> **Multiple Reflections**
+>
+> When using your ToF sensor on corners and concave shapes, they may cause unwanted reflections as light may be reflected multiple times which distorts measurement.
+>
+> **Ambient Light**
+>
+> When using a ToF camera in the great outdoors with bright sunlight can make outdoor use difficult. This is due to the high intensity of the sunlight can cause a quick saturation of the sensor pixels where actual light reflected off an object cannot be detected.
+
+
+
+
+
+
+### Kinect V4 / Azure Kinect
+
+* **Full Name:** Microsoft Azure Kinect
+* **Depth Technology:** Time of Flight (TOF)
+* **Depth FOV (H × V):** up to 120° × 120°
+* **Depth Resolution: ** up to 1024 × 1024
+* **Depth Accuracy Error:** -
+* **Depth Frame Rate: **  up to 30 fps, 15 fps if WFOV unbinned
+* **Minimum Depth Distance (Min-Z) at Max Resolution:** 0.5m
+* **Ideal Range: **  0.5 - 4m
+* **RGB Frame Rate and Resolution: **up to 3840 × 2160
+* **RGB Sensor FOV (H × V): **  up to 90° × 59°
+* **IMU:** Yes
+* **Use Environment: ** Indoor/Outdoor, work in HKSTP
+
+
+
+> #### Limitations of Azure Kinect
+>
+> first of all It has all the Limitations of ToF (Time of Flight) Camera.
+>
+> **Unsuitable perating modes**
+>
+> The depth camera supports the modes indicated below:
+>
+> [Reference](https://docs.microsoft.com/en-us/azure/kinect-dk/hardware-specification#microphone-array)
+>
+> | Mode                 | Resolution | Max FPS | Operating Range |
+> | -------------------- | ---------- | ------- | --------------- |
+> | NFOV unbinned        | 640x576    | 30      | 0.5 - 3.86 m    |
+> | NFOV 2x2 binned (SW) | 320x288    | 30      | 0.5 - 5.46 m    |
+> | WFOV 2x2 binned      | 512x512    | 30      | 0.25 - 2.88 m   |
+> | WFOV unbinned        | 1024x1024  | 15      | 0.25 - 2.21 m   |
+> | Passive IR           | 1024x1024  | 30      | N/A             |
+>
+> **Hardware lag**
+>
+> It also suffer from lag and latency issues. (25 May 2021)
+>
+> 
+
+
+
+### Zed
+
+* **Full Name:** Stereolabs Zed Camera
+* **Depth Technology:** 
+* **Depth FOV (H × V):** 
+* **Depth Resolution:** 
+* **Depth Accuracy Error:** -
+* **Depth Frame Rate: ** 
+* **Minimum Depth Distance (Min-Z) at Max Resolution:** 
+* **Ideal Range: ** 
+* **RGB Frame Rate and Resolution: ** 
+* **RGB Sensor FOV (H × V): ** 
+* **IMU:** 
+* **Use Environment: ** 
+
+
+
+> [Questionable ZED accuracy?](https://github.com/stereolabs/zed-examples/issues/44)
+
