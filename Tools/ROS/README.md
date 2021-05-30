@@ -9,6 +9,34 @@
 rosbag record <topic-names> -O <output filename>
 ```
 
+#### Quick examples to record some topics of cameras:
+* Start the camera topics, then start record a bag:
+
+L515
+```shell
+roslaunch realsense2_camera rs_camera.launch enable_infra:=true
+rosbag record camera/color/image_raw camera/aligned_depth_to_color/image_raw -O L515_31May_1.bag
+```
+
+KinectV2
+```shell
+roslaunch kinect2_bridge kinect2_bridge.launch
+rosbag record /kinect2/hd/image_color_rect /kinect2/hd/image_depth_rect -O K2_31May_1.bag
+```
+
+D455
+```shell
+roslaunch realsense2_camera rs_camera.launch
+rosbag record camera/color/image_raw camera/depth/image_rect_raw -O D455_31May_1.bag
+```
+
+Kinectv4
+```shell
+roslaunch azure_kinect_ros_driver driver.launch
+rosbag record rgb/image_raw depth_to_rgb/image_raw -O K4A_31May_1.bag
+```
+
+
 ### Play
 ```shell
 rosbag play -q <bag-files>
