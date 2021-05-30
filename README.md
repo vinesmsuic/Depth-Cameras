@@ -90,7 +90,7 @@
 
 
 > #### Limitations of D455
->
+> * The depth values are not stable at far range.
 > 
 
 
