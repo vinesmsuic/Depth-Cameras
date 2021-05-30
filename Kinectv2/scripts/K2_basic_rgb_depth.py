@@ -14,11 +14,11 @@ class Kinect_Node(object):
         #use CvBridge to convert between ROS and OpenCV images
         self.br = CvBridge()
 
-        # Node is subscribing to the /kinect2/sd/image_color_rect topic
-        self.rgb_sub = message_filters.Subscriber('/kinect2/sd/image_color_rect', Image)
+        # Node is subscribing to the /kinect2/hd/image_color_rect topic
+        self.rgb_sub = message_filters.Subscriber('/kinect2/hd/image_color_rect', Image)
 
-        # Node is subscribing to the /kinect2/sd/image_depth_rect
-        self.depth_sub = message_filters.Subscriber('/kinect2/sd/image_depth_rect', Image)
+        # Node is subscribing to the /kinect2/hd/image_depth_rect
+        self.depth_sub = message_filters.Subscriber('/kinect2/hd/image_depth_rect', Image)
 
 
     def callback(self, ros_rgb, ros_depth):
