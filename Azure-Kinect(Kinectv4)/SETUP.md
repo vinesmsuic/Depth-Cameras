@@ -253,12 +253,21 @@ sudo apt install k4a-tools
 
 
 
-Go to `catkin_ws/src` or src of your ws folder (the ws folder in Optional part)
+Go to `catkin_ws/src` or src of your ws folder (the ws folder mentioned in above Optional part)
 
 ```shell
 git clone https://github.com/microsoft/Azure_Kinect_ROS_Driver.git
 ```
 
+### For Jetson (JetPack Installed)
+
+[Nvidia Jetson Xavier NX: catkin_make causing error: undefined reference to `cv::error(int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*, char const*, int)'](https://github.com/microsoft/Azure_Kinect_ROS_Driver/issues/193)
+
+For jetson, you need the another version of `vision_opencv`. 
+clone this to your `src` folder as well.
+```shell
+git clone https://github.com/PolyU-Robocon/vision_opencv.git
+```
 
 
 ## Test Azure Kinect ROS Driver with rviz

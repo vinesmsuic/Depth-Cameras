@@ -68,3 +68,4 @@ ffmpeg needs to be installed!
 --start Optional start time in seconds.
 --end   Optional end time in seconds.
 ```
+* If your bag file contains both rgb and depth topics, it will just give you warnings and still give you a RGB H.264 video.
