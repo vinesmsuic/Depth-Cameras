@@ -31,12 +31,16 @@ sudo ninja install
 >
 
 
+> The depth engine is closed source and comes with the apt package and is not included in this repo. The depth engine (DE) is a closed source binary shipped with the Linux Debian package. As an example, run `apt install libk4a1.3` to install the Azure Kinect 1.3 and get the depth engine. See using the depth engine for information about versioning and adding the Microsoft's Package Repository to your machine. NOTE This step is not need for building, but is required running the SDK.
+
+To get Depth Engine:
 Firstly, configure Microsoft's Package Repository
 
 ```shell
 curl -sSL https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
 ```
 
+If you are using ARM, replace `https://packages.microsoft.com/ubuntu/18.04/prod` with `https://packages.microsoft.com/ubuntu/18.04/multiarch/prod`.
 ```shell
 sudo apt-add-repository https://packages.microsoft.com/ubuntu/18.04/prod
 ```
@@ -52,7 +56,6 @@ sudo apt install libk4a1.3
 sudo apt install libk4a1.3-dev
 ```
 
-> The depth engine is closed source and comes with the apt package and is not included in this repo. The depth engine (DE) is a closed source binary shipped with the Linux Debian package. As an example, run `apt install libk4a1.3` to install the Azure Kinect 1.3 and get the depth engine. See using the depth engine for information about versioning and adding the Microsoft's Package Repository to your machine. NOTE This step is not need for building, but is required running the SDK.
 
 
 
