@@ -9,20 +9,20 @@ See [http://wiki.ros.org/melodic/Installation](http://wiki.ros.org/melodic/Insta
 ### on Nvidia Jetson
 See [https://github.com/jetsonhacks/installROS](https://github.com/jetsonhacks/installROS).
 
-```
+```shell
 ./installROS.sh -p ros-melodic-desktop-full -p ros-melodic-rgbd-launch
 ```
 
 ## Install JetPack (Nvidia Jetson only) If you havent
 
-```
+```shell
 sudo apt update
 sudo apt install nvidia-jetpack
 ```
 
 ## Install OpenCV with CUDA accerlation
 
-```
+```shell
 cd ~
 git clone https://github.com/opencv/opencv_contrib.git
 cd opencv_contrib
