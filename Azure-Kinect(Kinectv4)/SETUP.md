@@ -269,6 +269,7 @@ clone this to your `src` folder as well.
 git clone https://github.com/PolyU-Robocon/vision_opencv.git
 ```
 
+[Requesting official support for Jetson Nano (Jetpack 4.3)](https://github.com/microsoft/Azure_Kinect_ROS_Driver/issues/123)
 
 ## Test Azure Kinect ROS Driver with rviz
 
