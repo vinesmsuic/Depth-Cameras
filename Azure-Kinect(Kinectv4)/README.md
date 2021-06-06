@@ -1,3 +1,8 @@
+# To use python3 in ROS
+```shell
+catkin_make -DCATKIN_ENABLE_TESTING=False -DCMAKE_BUILD_TYPE=Release -DPYTHON_EXECUTABLE=/usr/bin/python3
+```
+
 # ROS driver usage - Start the camera node
 
 ```shell
