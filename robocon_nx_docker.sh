@@ -27,19 +27,21 @@ ln -s -f ../libv4l1-videodev.h videodev.h
 
 
 echo 'ln -sf /usr/lib/aarch64-linux-gnu/libdrm.so.2.4.0 /usr/lib/aarch64-linux-gnu/libdrm.so.2
-' >> ~/.bashrc
-echo "source '/opt/ros/melodic/setup.bash'" >> ~/.bashrc
+' >> ~/.profile
 source ~/.bashrc
+source '/opt/ros/melodic/setup.bash'
+
 
 
 apt install -y python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential 
 
 rosdep init
 rosdep update
-
-pip3 install cython flake8 pylint atlas 
-###This will take a very long time (~ 30 mins), may seem to be stuck but it is not (pip is not multi-threaded)
-pip3 -vvvvv install numpy pandas
+ 
+pip3 install cython flake8 pylint atlas empy
+###This will take a very long time (~ 2 hour), may seem to be stuck but it is not (pip is not multi-threaded)
+pip3 -vvvvv install numpy pandas pycuda cupy
+sudo apt-get install libgtkglext1 libgtkglext1-dev
 
 cd ~
 git clone https://github.com/opencv/opencv_contrib.git
@@ -69,7 +71,7 @@ cmake --clean-first \
 -D OPENCV_DNN_CUDA=ON \
 -D ENABLE_NEON=ON \
 -D BUILD_opencv_cudacodec=ON \
--D WITH_QT=OFF \
+-D WITH_QT=ON \
 -D WITH_OPENMP=ON \
 -D WITH_OPENGL=ON \
 -D BUILD_TIFF=ON \
@@ -85,7 +87,8 @@ cmake --clean-first \
 -D INSTALL_C_EXAMPLES=ON \
 -D INSTALL_PYTHON_EXAMPLES=ON \
 -D BUILD_NEW_PYTHON_SUPPORT=ON \
--D BUILD_opencv_python3=TRUE \
+-D BUILD_opencv_python2=ON \
+-D BUILD_opencv_python3=ON \
 -D OPENCV_GENERATE_PKGCONFIG=ON \
 -D WITH_NVCUVID=ON\
 -D BUILD_EXAMPLES=ON ..
@@ -97,12 +100,13 @@ make -j6 && make -j6 install
 
 #############################################
 apt install -y libssl-dev libusb-1.0-0-dev pkg-config build-essential cmake cmake-curses-gui libgtk-3-dev libglfw3-dev libgl1-mesa-dev libglu1-mesa-dev qtcreator python3 python3-dev apt-utils
-## The following needs to be copied and pasted, do not run each line seperatly#
-echo 'export PATH="/usr/local/cuda-10.2/bin:$PATH"
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda-10.2/lib64"
-export PYTHONPATH="$PYTHONPATH:/usr/local/lib"' >> ~/.bashrc
 
-source ~/.bashrc
+export PATH='/usr/local/cuda-10.2/bin:$PATH'
+export LD_LIBRARY_PATH='$LD_LIBRARY_PATH:/usr/local/cuda-10.2/lib64'
+export PYTHONPATH="$PYTHONPATH:/usr/local/lib"
+/opt/ros/melodic/lib/python2.7/dist-packages:/usr/local/lib:/usr/local/lib/python3.6/pyrealsense2/:/usr/local/lib
+
+
 #end#
 ## The above needs to be changed according to cuda version and path##
 
@@ -123,13 +127,13 @@ mkdir build
 cd build
 
 /usr/bin/cmake ../ -DBUILD_EXAMPLES=true -DCMAKE_BUILD_TYPE=release -DBUILD_PYTHON_BINDINGS=bool:true -DFORCE_RSUSB_BACKEND=false -DBUILD_WITH_CUDA=true
-make -j6 && make install
+make -j6 && make -j6 install
 cp config/99-realsense-libusb.rules /etc/udev/rules.d/
 
 export 'PYTHONPATH="$PYTHONPATH:/usr/local/lib/python3.6/pyrealsense2/"' >> ~/.profile
 source ~/.bashrc
 
-
+/opt/ros/melodic/bin:/usr/local/cuda-10.2/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 mkdir -p ~/catkin_ws/src
 cd ~/catkin_ws/
 catkin_make
@@ -169,12 +173,33 @@ git clone https://github.com/paul-shuvo/iai_kinect2_opencv4.git
 cd iai_kinect2_opencv4
 git checkout master
 cd ../../
+-DPYTHON_EXECUTABLE=/usr/bin/python3 -DPYTHON_INCLUDE_DIR=/usr/include/python3.6m -DPYTHON_LIBRARY=/usr/lib/aarch64-linux-gnu/libpython3.6m.so
+cd ~
+git clone https://github.com/naoki-mizuno/ds4drv --branch devel
+cd ds4drv
+python3 setup.py install
+cp udev/50-ds4drv.rules /etc/udev/rules.d/
+udevadm control --reload-rules
+udevadm trigger
+cd ~/catkin_ws/src
+git clone https://github.com/naoki-mizuno/ds4_driver.git
+cd ds4_driver
+cd ../
 
-catkin_make -DCATKIN_ENABLE_TESTING=False -DCMAKE_BUILD_TYPE=Release
+catkin_make -DCATKIN_ENABLE_TESTING=False -DCMAKE_BUILD_TYPE=Release -DPYTHON_EXECUTABLE=/usr/bin/python3
+
 catkin_make install
+export PYTHONPATH=/usr/local/lib/python3.6/dist-packages/:/usr/lib/python3.6/dist-packages/:/opt/ros/melodic/lib/python2.7/dist-packages:/opt/ros/melodic/lib/python2.7/dist-packages:/usr/local/lib:/usr/local/lib/python3.6/pyrealsense2/
 
 echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 
+
+sudo pip3 install rospkg 
+sudo pip3 install netifaces
+sudo pip3 install defusedxml
+
+apt install -y bluez bluetooth
+##https://stackoverflow.com/questions/28868393/accessing-bluetooth-dongle-from-inside-docker
 
 ####Dont forget to commit your changes in docker before exiting
