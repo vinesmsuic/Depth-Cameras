@@ -173,7 +173,6 @@ git clone https://github.com/paul-shuvo/iai_kinect2_opencv4.git
 cd iai_kinect2_opencv4
 git checkout master
 cd ../../
--DPYTHON_EXECUTABLE=/usr/bin/python3 -DPYTHON_INCLUDE_DIR=/usr/include/python3.6m -DPYTHON_LIBRARY=/usr/lib/aarch64-linux-gnu/libpython3.6m.so -DCATKIN_ENABLE_TESTING=False -DCMAKE_BUILD_TYPE=Release
 cd ~
 git clone https://github.com/naoki-mizuno/ds4drv --branch devel
 cd ds4drv
@@ -186,7 +185,7 @@ git clone https://github.com/naoki-mizuno/ds4_driver.git
 cd ds4_driver
 cd ../
 
-catkin_make -DCATKIN_ENABLE_TESTING=False -DCMAKE_BUILD_TYPE=Release -DPYTHON_EXECUTABLE=/usr/bin/python3
+catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python3 -DPYTHON_INCLUDE_DIR=/usr/include/python3.6m -DPYTHON_LIBRARY=/usr/lib/aarch64-linux-gnu/libpython3.6m.so -DCATKIN_ENABLE_TESTING=False -DCMAKE_BUILD_TYPE=Release
 
 catkin_make install
 export PYTHONPATH=/usr/local/lib/python3.6/dist-packages/:/usr/lib/python3.6/dist-packages/:/opt/ros/melodic/lib/python2.7/dist-packages:/opt/ros/melodic/lib/python2.7/dist-packages:/usr/local/lib:/usr/local/lib/python3.6/pyrealsense2/
