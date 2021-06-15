@@ -21,7 +21,7 @@ apt install -y tzdata
 sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
 apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
 
-apt update && apt install -y ros-melodic-desktop-full ros-melodic-rgbd-launch git build-essential cmake pkg-config unzip yasm checkinstall libjpeg-dev libpng-dev libtiff-dev libavcodec-dev libavformat-dev libswscale-dev libavresample-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libxvidcore-dev x264 libx264-dev libfaac-dev libmp3lame-dev libtheora-dev libfaac-dev libmp3lame-dev libvorbis-dev libopencore-amrnb-dev libopencore-amrwb-dev libdc1394-22 libdc1394-22-dev libxine2-dev libv4l-dev v4l-utils libgtk-3-dev python3-dev python3-pip python3-testresources libtbb-dev libatlas-base-dev gfortran libgphoto2-dev libeigen3-dev libhdf5-dev doxygen libgoogle-glog-dev libgflags-dev libprotobuf-dev protobuf-compiler qt5-default ccache libopenblas-dev python3-dev python3-pip python3-setuptools python-pip software-properties-common
+apt update && apt install -y ros-melodic-desktop-full ros-melodic-rgbd-launch git build-essential cmake pkg-config unzip yasm checkinstall libjpeg-dev libpng-dev libtiff-dev libavcodec-dev libavformat-dev libswscale-dev libavresample-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libxvidcore-dev x264 libx264-dev libfaac-dev libmp3lame-dev libtheora-dev libfaac-dev libmp3lame-dev libvorbis-dev libopencore-amrnb-dev libopencore-amrwb-dev libdc1394-22 libdc1394-22-dev libxine2-dev libv4l-dev v4l-utils libgtk-3-dev python3-dev python3-pip python3-testresources libtbb-dev libatlas-base-dev gfortran libgphoto2-dev libeigen3-dev libhdf5-dev doxygen libgoogle-glog-dev libgflags-dev libprotobuf-dev protobuf-compiler qt5-default ccache libopenblas-dev python3-dev python3-pip python3-setuptools python-pip software-properties-common default-jdk openjdk-11-jdk
 cd /usr/include/linux
 ln -s -f ../libv4l1-videodev.h videodev.h
 
@@ -173,7 +173,7 @@ git clone https://github.com/paul-shuvo/iai_kinect2_opencv4.git
 cd iai_kinect2_opencv4
 git checkout master
 cd ../../
--DPYTHON_EXECUTABLE=/usr/bin/python3 -DPYTHON_INCLUDE_DIR=/usr/include/python3.6m -DPYTHON_LIBRARY=/usr/lib/aarch64-linux-gnu/libpython3.6m.so
+-DPYTHON_EXECUTABLE=/usr/bin/python3 -DPYTHON_INCLUDE_DIR=/usr/include/python3.6m -DPYTHON_LIBRARY=/usr/lib/aarch64-linux-gnu/libpython3.6m.so -DCATKIN_ENABLE_TESTING=False -DCMAKE_BUILD_TYPE=Release
 cd ~
 git clone https://github.com/naoki-mizuno/ds4drv --branch devel
 cd ds4drv
