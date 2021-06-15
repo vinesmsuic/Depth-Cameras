@@ -1,3 +1,4 @@
+'''
 robocon@robocon-desktop:~/catkin_ws$ catkin_make -DCATKIN_ENABLE_TESTING=False -DCMAKE_BUILD_TYPE=Release -DPYTHON_EXECUTABLE=/usr/bin/python3 -DPYTHON_INCLUDE_DIR=/usr/include/python3.6m -DPYTHON_LIBRARY=/usr/lib/aarch64-linux-gnu/libpython3.6m.so
 Base path: /home/robocon/catkin_ws
 Source space: /home/robocon/catkin_ws/src
@@ -534,3 +535,4 @@ In file included from /usr/include/c++/7/memory:80:0,
 [ 98%] Built target kinect2_viewer
 [100%] Linking CXX shared library /home/robocon/catkin_ws/devel/lib/librealsense2_camera.so
 [100%] Built target realsense2_camera
+'''
