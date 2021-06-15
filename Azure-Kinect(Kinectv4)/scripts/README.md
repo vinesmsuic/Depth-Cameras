@@ -25,3 +25,6 @@ sudo chmod +x yourfile.py
 
 
 * Do `source ./devel/setup.bash` after each change on launch file.
+
+* Do `source ./devel/setup.bash` after each `catkin_make`.
+
