@@ -101,12 +101,15 @@ If you are using D435/D455/L515, you need Intel RealSense SDK.
 
 ### Install Intel RealSense SDK
 
+Intel RealSense update insanely quick so I would not recommend using a script to install it. 
+
 #### on Linux Computers
 See [https://github.com/IntelRealSense/librealsense/blob/master/doc/distribution_linux.md](https://github.com/IntelRealSense/librealsense/blob/master/doc/distribution_linux.md)
 
 
 
 #### on Nvidia Jetson
+
 Here is a script to build realsenseSDK on the Nvidia JetsonNX.
 
 ```shell

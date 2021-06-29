@@ -1,4 +1,4 @@
-# Depth-Cameras
+# Depth Cameras
 
 
 
@@ -56,7 +56,7 @@ catkin_make -DCATKIN_ENABLE_TESTING=False -DCMAKE_BUILD_TYPE=Release -DPYTHON_EX
 * **RGB Frame Rate and Resolution:** 1920 × 1080 at 30 fps
 * **RGB Sensor FOV (H × V):** 70° × 43°
 * **IMU:** Yes
-* **Use Environment:** Indoor only, won't work in HKSTP because L515 uses same wavelength with their LEDs. 
+* **Use Environment:** Indoor only, work in HKSTP inner zone only.
 
 
 
