@@ -110,17 +110,21 @@ See [https://github.com/IntelRealSense/librealsense/blob/master/doc/distribution
 
 #### on Nvidia Jetson
 
-Here is a script to build realsenseSDK on the Nvidia JetsonNX.
-
 ```shell
-sudo ./InstallRealSenseSDK.sh
+sudo apt update
+###Dont install nvidia-jetpack in a docker container###
+sudo apt install nvidia-jetpack
+
+
 ```
 
-Verify Installation
-```shell
-realsense-viewer
-```
-It should be LibRealSense v2.41.0.
+@winston2468
+
+
+
+
+
+
 
 ### Install Intel RealSense ROS Wrapper
 

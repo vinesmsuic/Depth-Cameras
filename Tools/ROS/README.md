@@ -31,6 +31,16 @@ sudo chmod +x yourfile.py
 
 
 
+# Configure Parameters of Camera
+
+```powershell
+rosrun rqt_reconfigure rqt_reconfigure
+```
+
+
+
+
+
 # For Video Analysis
 
 ## [rosbag usage](http://wiki.ros.org/rosbag/Commandline)
