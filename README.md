@@ -158,7 +158,7 @@ catkin_make -DCATKIN_ENABLE_TESTING=False -DCMAKE_BUILD_TYPE=Release -DPYTHON_EX
 * **Depth Frame Rate:**  up to 30 fps, 15 fps if WFOV unbinned
 * **Minimum Depth Distance (Min-Z) at Max Resolution:** 0.5m
 * **Ideal Range:**  0.5 - 4m
-* **RGB Frame Rate and Resolution:**up to 3840 × 2160
+* **RGB Frame Rate and Resolution:** up to 3840 × 2160
 * **RGB Sensor FOV (H × V):**  up to 90° × 59°
 * **IMU:** Yes
 * **Use Environment:** Indoor/Outdoor, work in HKSTP
