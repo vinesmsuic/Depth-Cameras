@@ -28,12 +28,12 @@ catkin_make -DCATKIN_ENABLE_TESTING=False -DCMAKE_BUILD_TYPE=Release -DPYTHON_EX
 
 
 ## Current Available Depth Cameras in the Lab:
-* [AzureKinect (Kinect V4)](https://docs.microsoft.com/en-us/azure/kinect-dk/hardware-specification)  x 2
-* Kinectv2  x 2     - canceled support by Microsoft
-* [Realsense D435i](https://www.intelrealsense.com/depth-camera-d435i/) x 0
-* [Realsense D455](https://www.intelrealsense.com/depth-camera-d455/) x 1
-* [Stereolabs Zed Camera](https://www.stereolabs.com/zed/) x 1
-* Realsense LiDAR Camera L515 x 1
+* [AzureKinect (Kinect V4)](https://docs.microsoft.com/en-us/azure/kinect-dk/hardware-specification)
+* Kinectv2     - canceled support by Microsoft
+* [Realsense D435i](https://www.intelrealsense.com/depth-camera-d435i/)
+* [Realsense D455](https://www.intelrealsense.com/depth-camera-d455/)
+* [Stereolabs Zed Camera](https://www.stereolabs.com/zed/)
+* Realsense LiDAR Camera L515
 
 
 
