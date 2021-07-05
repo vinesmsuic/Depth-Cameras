@@ -2,6 +2,20 @@
 
 
 
+## To catkin_make with python3 in ROS
+
+```shell
+catkin_make -DCATKIN_ENABLE_TESTING=False -DCMAKE_BUILD_TYPE=Release -DPYTHON_EXECUTABLE=/usr/bin/python3
+```
+
+
+
+```shell
+catkin_make -DCATKIN_ENABLE_TESTING=False -DCMAKE_BUILD_TYPE=Release -DPYTHON_EXECUTABLE=/usr/bin/python3 -DPYTHON_INCLUDE_DIR=/usr/include/python3.6m -DPYTHON_LIBRARY=/usr/lib/aarch64-linux-gnu/libpython3.6m.so
+```
+
+
+
 ## RGB+Depth Require Packages
 
 * Require Package: `cvbridge`, `rospy`, `message_filters`
@@ -37,7 +51,7 @@ sudo chmod +x yourfile.py
 rosrun rqt_reconfigure rqt_reconfigure
 ```
 
-
+* Especially use it to configure Realsense products.
 
 
 
