@@ -10,7 +10,7 @@
 * Depth Range: Zed > L515 > D455 > KinectV2 > Kinectv4
 * RGB resolution: Kinectv4 > All
 * FPS: D455 > All
-* Price: Max has no clue, Max didn't pay the check
+* Price: I have no clue, I didn't pay the check
 
 
 
@@ -44,7 +44,7 @@
 * **RGB Frame Rate and Resolution:** 1920 × 1080 at 30 fps
 * **RGB Sensor FOV (H × V):** 70° × 43°
 * **IMU:** Yes
-* **Use Environment:** Indoor only, work in HKSTP inner zone only.
+* **Use Environment:** Indoor only
 
 
 
@@ -88,7 +88,7 @@
 * **RGB Frame Rate and Resolution:** 1280 × 800 at 30 fps
 * **RGB Sensor FOV (H × V):** 90° × 65°
 * **IMU:** Yes
-* **Use Environment:** Indoor/Outdoor, work in HKSTP
+* **Use Environment:** Indoor/Outdoor
 
 
 
@@ -111,7 +111,7 @@
 * **RGB Frame Rate and Resolution:** 1920 x 1080 at 30 fps
 * **RGB Sensor FOV (H × V):** 70° × 60°
 * **IMU:** No
-* **Use Environment:** Indoor/Outdoor, work in HKSTP
+* **Use Environment:** Indoor/Outdoor
 
 
 
@@ -149,7 +149,7 @@
 * **RGB Frame Rate and Resolution:** up to 3840 × 2160
 * **RGB Sensor FOV (H × V):**  up to 90° × 59°
 * **IMU:** Yes
-* **Use Environment:** Indoor/Outdoor, work in HKSTP
+* **Use Environment:** Indoor/Outdoor
 
 
 
